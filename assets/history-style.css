@@ -55,7 +55,8 @@
 }
 
 .history-main .history-timeline {
-    margin-top: 260px;
+    /* margin-top: 260px; */
+    margin-top: 320px;
 }
 
 /* SIDEBAR LEFT */
