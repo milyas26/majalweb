@@ -1,29 +1,46 @@
-    // Cache our vars for the fixed sidebar on scroll
+
+    // OBSERVE ELEMENT IS IN VIEWPORT
+    var observer = new IntersectionObserver(function(entries) {
+        var memberTeamRecord = document.getElementById('member-team-record')
+        var launchedProductRecord = document.getElementById('product-launched-record');
+        var awardedFellowshipRecord = document.getElementById('awarded-fellowship-record');
+        var accoladesAwwardRecord = document.getElementById('acolades-awward-record');
+
+        const id = entries[0].target.id
+        if(entries[0].isIntersecting === true){
+
+            // if id include "team-member"
+            if(id.includes('team-member')) {
+                memberTeamRecord.innerHTML = id.split('-')[2];
+            } else if (id.includes('launched-product')) {
+                launchedProductRecord.innerHTML = id.split('-')[2];
+            } else if (id.includes('fellowship-awarded')) {
+                awardedFellowshipRecord.innerHTML = id.split('-')[2];
+            } else if (id.includes('awward-acolades')) {
+                accoladesAwwardRecord.innerHTML = id.split('-')[2];
+            }
+
+        }
+    }, { threshold: [0.5] });
+
+
     var $sidebarLeft = $('#records-sidebar');
     var $sidebarRight = $('#navigate');
-    // Get & Store the original top of our #sidebar-nav so we can test against it
     var sidebarTop = $sidebarLeft.position().top - 35;
-    // Edit the `- 10` to control when it should disappear when the footer is hit.
+
     var blogHeight = $('#content-timeline-wrapper').outerHeight() - 10;
 
-    // Add the function below to the scroll event
     $(window).scroll(fixSidebarOnScroll);
 
-    // On window scroll, this fn is called (binded above)
+    // STICKY SIDEBAR FUNCTION
     function fixSidebarOnScroll() {
-        // Cache our scroll top position (our current scroll position)
         var windowScrollTop = $(window).scrollTop();
-
-        // Add or remove our sticky class on these conditions
         if (windowScrollTop >= blogHeight || windowScrollTop <= sidebarTop) {
-            // Remove when the scroll is greater than our #content.OuterHeight()
-            // or when our sticky scroll is above the original position of the sidebar
+
             $sidebarLeft.removeClass('sticky');
             $sidebarRight.removeClass('sticky');
         }
-        // Scroll is past the original position of sidebar
         else if (windowScrollTop >= sidebarTop) {
-            // Otherwise add the sticky if $sidebarLeft doesnt have it already!
             if (!$sidebarLeft.hasClass('sticky')) {
                 $sidebarLeft.addClass('sticky');
             }
@@ -31,4 +48,20 @@
                 $sidebarRight.addClass('sticky');
             }
         }
+
+        var teamMembers = document.querySelectorAll('[id^="team-member"]');
+        var launchedProducts = document.querySelectorAll('[id^="launched-product"]');
+        var fellowshipAwarded = document.querySelectorAll('[id^="fellowship-awarded"]');
+        var awardAccolades = document.querySelectorAll('[id^="awward-acolades"]');
+
+        const arrays = [...teamMembers, ...launchedProducts, ...fellowshipAwarded, ...awardAccolades]
+
+        arrays.forEach(function (element) {
+            observer.observe(element);
+        });
+
     }
+
+    
+    
+    
