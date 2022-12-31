@@ -1,5 +1,40 @@
-.history-main {
+/* .history-main {
     background-image: url("../assets/image/history/history-bg.svg");
+} */
+
+.img-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -9;
+    height: 100%;
+    width: 100%;
+}
+
+.img-background img {
+    position: absolute;
+}
+
+.img-background .main-bg-1, .main-bg-2 {
+    width: 100%;
+}
+
+.img-background .main-bg-2 {
+    display: none;
+}
+
+.img-background img.rectangle-top {
+    top: 0;
+    left: 0;
+    width: 30%;
+    z-index: 1;
+}
+
+.img-background img.rectangle-bottom {
+    bottom: 0;
+    right: 0;
+    width: 30%;
+    z-index: 1;
 }
 
 .bottom-content {
@@ -263,6 +298,10 @@
     margin-left: -100px;
 }
 
+.records-sidebar-md {
+    display: none;
+}
+
  .history-main .history-timeline .records h2 {
     font-weight: 700;
     font-size: 18px;
@@ -301,4 +340,112 @@
     line-height: 26px;
     color: #394A6C;
     opacity: 0.7;
+}
+
+/* Extra small devices (phones, 600px and down)
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+    .img-background .main-bg-1 {
+        display: none;
+    }
+
+    .img-background .main-bg-2 {
+        display: block;
+    }
+
+    .img-background img.rectangle-top {
+        top: 0;
+        left: 0;
+        width: 55%;
+        z-index: 1;
+    }
+
+    .records-sidebar-lg {
+        display: none;
+    }
+
+    .history-main .history-banner .text-title {
+        margin-top: 50px;
+        max-width: 518px;
+    }
+
+    .history-main .history-banner .text-title .subtitle {
+        font-size: 40px;
+    }
+
+    .history-main .history-banner .text-title .description {
+        font-size: 14px;
+    }
+
+    .history-main .history-timeline {
+        margin-top: 230px;
+    }
+
+    .history-main .history-timeline .navigate .years.active .year {
+        font-size: 20px;
+    }
+
+    .history-main .history-timeline .navigate .years .year {
+        font-size: 14px;
+        line-height: 32px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .content-wrapper .content .year {
+        font-size: 15px;
+        margin-bottom: 8px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .content-wrapper .content .title {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .content-wrapper .content .subtitle {
+        font-size: 15px;
+        margin-bottom: 28px;
+    }
+
+    .records-sidebar-md {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 16px 0;
+        box-shadow: 0px -80px 80px rgba(57, 74, 108, 0.07);
+    }
+
+    .records-sidebar-md .record-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
+    }
+
+    .records-sidebar-md .record-wrapper .record-item {
+        display: block !important;
+        max-width: 75px;
+        margin-bottom: 0px !important;
+    }
+
+    .history-main .history-timeline .records .record-wrapper .record-item .count {
+        font-size: 48px;
+        margin: 0;
+    }
+    .history-main .history-timeline .records .record-wrapper .record-item .desc {
+        font-size: 16px;
+        opacity: .7
+    }
+
 }
