@@ -442,6 +442,7 @@
     .history-main .history-timeline .records .record-wrapper .record-item .count {
         font-size: 48px;
         margin: 0;
+        margin-bottom: 12px;
     }
     .history-main .history-timeline .records .record-wrapper .record-item .desc {
         font-size: 16px;
