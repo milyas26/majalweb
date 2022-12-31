@@ -11,6 +11,10 @@
     width: 100%;
 }
 
+.select-year-option {
+    display: none;
+}
+
 .img-background img {
     position: absolute;
 }
@@ -20,6 +24,10 @@
 }
 
 .img-background .main-bg-2 {
+    display: none;
+}
+
+.img-background .main-bg-3 {
     display: none;
 }
 
@@ -360,8 +368,13 @@
         display: none;
     }
 
+    .img-background .main-bg-3 {
+        display: none;
+    }
+
     .img-background .main-bg-2 {
         display: block;
+        width: 100%;
     }
 
     .img-background img.rectangle-top {
@@ -449,4 +462,139 @@
         opacity: .7
     }
 
+}
+
+@media only screen and (max-width: 500px) {
+    .img-background .main-bg-1 {
+        display: none;
+    }
+
+    .img-background .main-bg-3 {
+        display: block;
+        width: 100%;
+    }
+
+    .img-background .main-bg-2 {
+        display: none;
+    }
+
+    .history-main .history-banner .text-title {
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .history-main .history-banner .text-title .title {
+        text-align: left;
+        margin-bottom: 20px;
+        font-size: 14px;
+    }
+
+    .history-main .history-banner .text-title .subtitle {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    .history-main .history-banner .text-title .description {
+        text-align: left;
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .history-main .history-timeline .navigate {
+        display: none;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content {
+        padding-top: 0;
+    }
+
+    .history-main .history-timeline .timelines {
+        margin-left: 12px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .content-wrapper {
+        margin-bottom: 40px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .content-wrapper .check-point .checkpoint-started {
+        margin-right: 20px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .content-wrapper .content .year {
+        font-size: 14px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .content-wrapper .content .title {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .content-wrapper .content .subtitle {
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 16px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .content-wrapper .content img {
+        width: 100%;
+    }
+
+    .records-sidebar-md {
+        padding: 15px 0;
+    }
+
+    .history-main .history-timeline .records .record-wrapper .record-item .count {
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    .history-main .history-timeline .records .record-wrapper .record-item .desc {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .planning-the-future .content {
+        padding: 0 0 30px 40px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .planning-the-future .content .title {
+        font-size: 32px;
+        line-height: 42px;
+        margin-bottom: 20px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .planning-the-future .content .subtitle {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .planning-the-future .cta {
+        padding: 0 0 30px 40px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .planning-the-future .cta button {
+        margin-left: 0;
+    } 
+
+    .bottom-content .content-timeline-wrapper-footer {
+        height: 600px;
+    }
+
+    .select-year-option {
+        display: block;
+        margin-bottom: 32px;
+    }
+
+    .select-year-option .selected-year {
+        padding: 2px 30px;
+        background: #fff;
+        width: 118px;
+        border-radius: 30px;
+        border: 1px solid #8FE2FF;
+        box-shadow: 0px 20px 50px rgba(57, 74, 108, 0.05);
+        text-align: center;
+        font-size: 18px;
+        line-height: 36px;
+    }
 }
