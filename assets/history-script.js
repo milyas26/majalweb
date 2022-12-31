@@ -84,22 +84,33 @@
     $(window).scroll(function() {
         // OBSERVE ELEMENT IS IN VIEWPORT
         var observer = new IntersectionObserver(function(entries) {
-            var memberTeamRecord = document.getElementById('member-team-record')
-            var launchedProductRecord = document.getElementById('product-launched-record');
-            var awardedFellowshipRecord = document.getElementById('awarded-fellowship-record');
-            var accoladesAwwardRecord = document.getElementById('acolades-awward-record');
+            var memberTeamRecord = document.querySelectorAll('#member-team-record')
+            var launchedProductRecord = document.querySelectorAll('#product-launched-record');
+            var awardedFellowshipRecord = document.querySelectorAll('#awarded-fellowship-record');
+            var accoladesAwwardRecord = document.querySelectorAll('#acolades-awward-record');
 
             const launchedProduct = entries[0].target.getAttribute('launchedProduct')
             const fellowshipAwarded = entries[0].target.getAttribute('fellowshipAwarded')
             const teamMember = entries[0].target.getAttribute('teamMember')
             const awardAccolades = entries[0].target.getAttribute('awardAccolades')
 
-            const id = entries[0].target.id
             if(entries[0].isIntersecting === true){
-                memberTeamRecord.innerHTML = teamMember;
-                launchedProductRecord.innerHTML = launchedProduct;
-                awardedFellowshipRecord.innerHTML = fellowshipAwarded;
-                accoladesAwwardRecord.innerHTML = awardAccolades;
+                memberTeamRecord.forEach(element => {
+                    element.innerHTML = teamMember;
+                })
+
+                launchedProductRecord.forEach(element => {
+                    element.innerHTML = launchedProduct;
+                })
+                
+                awardedFellowshipRecord.forEach(element => {
+                    element.innerHTML = fellowshipAwarded;
+                })
+
+                accoladesAwwardRecord.forEach(element => {
+                    element.innerHTML = awardAccolades;
+                })
+
 
             }
         }, { threshold: [1] });
