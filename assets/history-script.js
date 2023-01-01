@@ -139,5 +139,54 @@
                 behavior: 'smooth'
             });
         })
-    }
-    )
+    })
+
+    // show-hide element .years-options on click
+    const yearsOptions = document.querySelector('.years-options');
+    const yearsOptionsButton = document.querySelector('.years-options-button');
+    yearsOptionsButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        yearsOptions.classList.toggle('show');
+    })
+
+    // hide when click outside element .years-options
+    document.addEventListener('click', function (e) {
+        if (e.target.closest('.years-options') || e.target.closest('.years-options-button')) return;
+        yearsOptions.classList.remove('show');
+    })
+
+    // get all element .year-option
+    const yearOptions = document.querySelectorAll('.year-option');
+    // onclick event on each year
+    yearOptions.forEach(function (year) {
+        year.addEventListener('click', function (e) {
+            e.preventDefault();
+            // get innerhtml value
+            let year = e.target.innerHTML;
+            // remove img tag from year element
+            year = year.replace(/<img[^>]*>/g,"");
+
+            const yearElement = document.getElementById(year);
+
+            window.scrollTo({
+                top: yearElement.offsetTop - 30,
+                behavior: 'smooth'
+            });
+
+            // hide element .years-options
+            yearsOptions.classList.remove('show');
+
+            // add class .active to year option
+            yearOptions.forEach(function (year) {
+                year.classList.remove('active');
+
+                if (year.innerHTML == e.target.innerHTML) {
+                    year.classList.add('active');
+                }
+            })
+
+            // change value .selected-year
+            const selectedYear = document.querySelector('.selected-year');
+            selectedYear.innerHTML = year;
+        })
+    })

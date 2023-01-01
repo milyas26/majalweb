@@ -500,6 +500,10 @@
         line-height: 32px;
     }
 
+    .history-main .history-timeline {
+        margin-top: 300px;
+    } 
+
     .history-main .history-timeline .navigate {
         display: none;
     }
@@ -541,6 +545,11 @@
 
     .records-sidebar-md {
         padding: 15px 0;
+        z-index: 99;
+    }
+
+    .history-main footer {
+        z-index: 999;
     }
 
     .history-main .history-timeline .records .record-wrapper .record-item .count {
@@ -584,6 +593,7 @@
     .select-year-option {
         display: block;
         margin-bottom: 32px;
+        position: relative;
     }
 
     .select-year-option .selected-year {
@@ -597,4 +607,63 @@
         font-size: 18px;
         line-height: 36px;
     }
+
+    .history-main .history-timeline .select-year-option .years-options {
+        display: none;
+    }
+
+    .history-main .history-timeline .select-year-option .years-options.show {
+        display: block;
+        background: #FFF;
+        width: fit-content;
+        box-shadow: 0px 80px 80px rgba(57, 74, 108, 0.14);
+        border-radius: 8px;
+        position: absolute;
+        z-index: 9;
+        padding: 5px;
+        animation: fadeIn 0.5s;
+        -webkit-animation: fadeIn 0.5s;
+        -moz-animation: fadeIn 0.5s;
+        -o-animation: fadeIn 0.5s;
+        -ms-animation: fadeIn 0.5s;
+    }
+
+    .history-main .history-timeline .select-year-option .years-options .year-option {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 20px;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .history-main .history-timeline .select-year-option .years-options .year-option:hover {
+        background: #1BB0F4;
+        color: #FFF;
+    }
+
+    .history-main .history-timeline .select-year-option .years-options .year-option img {
+        display: none;
+    }
+
+    .history-main .history-timeline .select-year-option .years-options .year-option.active {
+        background: #1BB0F4;
+        color: #FFF;
+    }
+
+    .history-main .history-timeline .select-year-option .years-options .year-option.active img {
+        display: block;
+        margin-right: 5px;
+    }
+
+    .team-increase {
+        line-height : 20px !important;
+    }
 }
+
+
+@media only screen and (max-width: 350px) {
+    .history-main .history-timeline {
+        margin-top: 100px;
+    }
+} 
