@@ -7,50 +7,52 @@
     var $sidebarRight = $('#navigate');
     var sidebarTop = $sidebarLeft.position().top - 35;
 
-    var blogHeight = $('#content-timeline-wrapper').outerHeight() - 10;
-
-    $(window).scroll(fixSidebarOnScroll);
-
-    // STICKY SIDEBAR FUNCTION
-    function fixSidebarOnScroll() {
-        var windowScrollTop = $(window).scrollTop();
-        if (windowScrollTop <= sidebarTop) {
-            $sidebarLeft.css({
-                position: 'initial'
-            })
-            $sidebarRight.css({
-                position: 'initial'
-            })
-        } 
-        else if (windowScrollTop >= blogHeight) {
-            $sidebarLeft.css({
-                position: 'absolute',
-                bottom: '120px',
-                maxWidth: '300px',
-                top: 'auto'
-            })
-            $sidebarRight.css({
-                position: 'absolute',
-                bottom: '120px',
-                maxWidth: '300px',
-                top: 'auto'
-            })
+    // on window onliad
+    $(window).on('load', function () {
+        var blogHeight = $('#content-timeline-wrapper').outerHeight() - 10;
+        console.log('blogHeight', blogHeight)
+        $(window).scroll(fixSidebarOnScroll);
+        // STICKY SIDEBAR FUNCTION
+        function fixSidebarOnScroll() {
+            var windowScrollTop = $(window).scrollTop();
+            if (windowScrollTop <= sidebarTop) {
+                $sidebarLeft.css({
+                    position: 'initial'
+                })
+                $sidebarRight.css({
+                    position: 'initial'
+                })
+            } 
+            else if (windowScrollTop >= blogHeight) {
+                $sidebarLeft.css({
+                    position: 'absolute',
+                    bottom: '120px',
+                    maxWidth: '300px',
+                    top: 'auto'
+                })
+                $sidebarRight.css({
+                    position: 'absolute',
+                    bottom: '120px',
+                    maxWidth: '300px',
+                    top: 'auto'
+                })
+            }
+            else if (windowScrollTop >= sidebarTop) {
+                $sidebarLeft.css({
+                    position: 'fixed',
+                    top: '35px',
+                    maxWidth: '300px',
+                    bottom: 'auto'
+                })
+                $sidebarRight.css({
+                    position: 'fixed',
+                    top: '35px',
+                    maxWidth: '300px',
+                    bottom: 'auto'
+                })
+            }
         }
-        else if (windowScrollTop >= sidebarTop) {
-            $sidebarLeft.css({
-                position: 'fixed',
-                top: '35px',
-                maxWidth: '300px',
-                bottom: 'auto'
-            })
-            $sidebarRight.css({
-                position: 'fixed',
-                top: '35px',
-                maxWidth: '300px',
-                bottom: 'auto'
-            })
-        }
-    }
+    })
     
     $(window).scroll(function () {
         // get all element where class year
