@@ -80,7 +80,7 @@
 }
 
 .history-main .history-banner .text-title{
-    margin: 85px auto 0;
+    margin: 90px auto 0;
     text-align: center;
 }
 
@@ -656,8 +656,26 @@
 }
 
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 450px) {
     .history-main .history-timeline {
-        margin-top: 100px;
+        margin-top: 400px;
+    }
+} 
+
+@media only screen and (max-width: 400px) {
+    .history-main .history-timeline {
+        margin-top: 300px;
+    }
+} 
+
+@media only screen and (max-width: 375px) {
+    .history-main .history-timeline {
+        margin-top: 250px;
+    }
+} 
+
+@media only screen and (max-width: 360px) {
+    .history-main .history-timeline {
+        margin-top: 150px;
     }
 } 

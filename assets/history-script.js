@@ -3,12 +3,12 @@
         $(this).scrollTop(0);
     });
 
-    var $sidebarLeft = $('#records-sidebar');
-    var $sidebarRight = $('#navigate');
-    var sidebarTop = $sidebarLeft.position().top - 35;
-
+    
     // on window onliad
     $(window).on('load', function () {
+        var $sidebarLeft = $('#records-sidebar');
+        var $sidebarRight = $('#navigate');
+        var sidebarTop = $sidebarRight.position().top - 35;
         var blogHeight = $('#content-timeline-wrapper').outerHeight() - 10;
         $(window).scroll(fixSidebarOnScroll);
         // STICKY SIDEBAR FUNCTION
