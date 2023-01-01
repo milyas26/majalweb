@@ -10,7 +10,6 @@
     // on window onliad
     $(window).on('load', function () {
         var blogHeight = $('#content-timeline-wrapper').outerHeight() - 10;
-        console.log('blogHeight', blogHeight)
         $(window).scroll(fixSidebarOnScroll);
         // STICKY SIDEBAR FUNCTION
         function fixSidebarOnScroll() {
