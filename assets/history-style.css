@@ -520,8 +520,15 @@
         margin-bottom: 40px;
     }
 
+    
     .history-main .history-timeline .timelines .timeline-content .box-wrapper .content-wrapper .check-point .checkpoint-started {
         margin-right: 20px;
+    }
+
+    .history-main .history-timeline .timelines .timeline-content .box-wrapper .content-wrapper .content .icon-record {
+        width: 44px;
+        height: 36px;
+        padding: 8px;
     }
 
     .history-main .history-timeline .timelines .timeline-content .box-wrapper .content-wrapper .content .year {
